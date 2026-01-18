@@ -54,7 +54,41 @@ const handleFirstInteraction = () => {
             })
             .catch(err => console.log("هێشتا ڕێگری هەیە:", err));
     }
-};
+};// فەنکشن بۆ گۆڕینی دەنگ و پەخشکردن
+function setTrack(fileName, title) {
+    const audio = document.getElementById('audio-ctrl');
+    const titleLabel = document.getElementById('track-display');
+    
+    if (audio && titleLabel) {
+        // گۆڕینی ناونیشان بۆ ناوی ئەو بەشەی کلیکی لێکراوە
+        titleLabel.innerText = title;
+        
+        audio.src = fileName;
+        audio.load();
+        audio.play().catch(e => console.log("لێدان پێویستی بە کلیکی بەکارهێنەرە"));
+
+        // ئەم بەشە نوێیە: کاتێک دەنگەکە تەواو بوو (Ended)
+        audio.onended = function() {
+            titleLabel.innerText = "دەنگەکان"; // دووبارە دەبێتەوە بە "دەنگەکان"
+        };
+    }
+}
+
+
+// فەنکشن بۆ کردنەوەی ناوەڕۆکی کتێبەکان
+function openBook(bookName) {
+    const mainArea = document.getElementById('main-area');
+    mainArea.innerHTML = `
+        <div style="text-align: right; padding: 10px;">
+            <h2 style="color: #3498db; border-bottom: 2px solid #3498db; display: inline-block;">کتێبی ${bookName}</h2>
+            <p style="margin-top: 20px; font-size: 16px; line-height: 1.8;">
+                لێرەدا ناوەڕۆکی تایبەت بە ${bookName} دەرکەوێت... <br>
+                ئەم بەشە ئێستا ئامادەیە بۆ خوێندنەوە.
+            </p>
+            <button onclick="location.reload()" style="margin-top: 20px; padding: 8px 15px; cursor: pointer;">گەڕانەوە</button>
+        </div>
+    `;
+}
 
 const removeInteractionListeners = () => {
     window.removeEventListener('click', handleFirstInteraction);
@@ -75,3 +109,18 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+// ئەمە زیاد بکە بۆ کۆتایی فایلەکە
+function openPDF(fileName) {
+    const mainArea = document.getElementById('main-area');
+    if (!mainArea) return;
+
+    mainArea.innerHTML = `
+        <div style="animation: fadeIn 0.6s ease; height: 100%;">
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                <h3 style="color: #27ae60;">📖 قورئانی پیرۆز</h3>
+                <button onclick="location.reload()" style="background: #e74c3c; color: white; border: none; padding: 5px 15px; cursor: pointer; border-radius: 4px;">داخستن</button>
+            </div>
+            <iframe src="${fileName}" width="100%" height="600px" style="border: none; border-radius: 8px;"></iframe>
+        </div>
+    `;
+}
