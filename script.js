@@ -1,42 +1,32 @@
-function loadPDF(pdfUrl) {
-    const mainArea = document.getElementById('main-area');
-    const googleViewerUrl = `https://docs.google.com/viewer?url=${window.location.origin + window.location.pathname + pdfUrl}&embedded=true`;
-    
-    mainArea.innerHTML = `
-        <div style="height: 80vh;">
-            <div style="background:#3498db; color:white; padding:10px; display:flex; justify-content:space-between;">
-                <span>خوێندنەوەی پەرتووک</span>
-                <button onclick="location.reload()" style="background:red; color:white; border:none; padding:5px 10px; cursor:pointer; border-radius:4px;">داخستن</button>
-            </div>
-            <iframe src="${googleViewerUrl}" style="width:100%; height:100%; border:none;"></iframe>
-        </div>
-    `;
-}
-
-function openBook(name) {
-    document.getElementById('main-area').innerHTML = `
-        <div style="padding:20px;">
-            <h2 style="color:#3498db;">بەشی ${name}</h2>
-            <p style="margin-top:15px;">ئەم بەشە لە ئێستادا ئامادە دەکرێت...</p>
-            <button onclick="location.reload()" style="margin-top:20px; padding:10px 20px; background:#3498db; color:white; border:none; border-radius:5px; cursor:pointer;">گەڕانەوە</button>
-        </div>
-    `;
-}
-
-function setTrack(file, title) {
-    const audio = document.getElementById('audio-ctrl');
-    document.getElementById('track-display').innerText = "پەخش دەبێت: " + title;
-    audio.src = file;
-    audio.play();
-}
-
 function showAbout() {
-    document.getElementById('main-area').innerHTML = `
-        <div style="text-align:right; padding:20px;">
-            <h2 style="color:#3498db;">دەربارەی پڕۆژە</h2>
-            <p style="margin-top:15px; line-height:1.8;">ئەمە کتێبخانەیەکی دیجیتاڵییە بۆ خزمەتکردن بە خوێنەرانی کورد.</p>
-            <p>دیزاین و گەشەپێدان: مەزهەر ڕەئوف</p>
-            <button onclick="location.reload()" style="margin-top:20px; padding:10px 20px; background:#3498db; color:white; border:none; border-radius:5px; cursor:pointer;">گەڕانەوە</button>
+    const mainArea = document.getElementById('main-area');
+    if (!mainArea) return;
+
+    mainArea.innerHTML = `
+        <div style="animation: fadeIn 0.6s ease; text-align: right; padding: 20px; background: white; border-radius: 10px; border: 1px solid #3498db;">
+            <h2 style="color: #3498db; border-bottom: 2px solid #3498db; display: inline-block; margin-bottom: 20px;">دەربارەی کتێبخانەی داریان</h2>
+            
+            <p style="font-size: 18px; line-height: 2; color: #333; margin-bottom: 15px;">
+                بەخێربێیت بۆ کتێبخانەی داریان. ئەم پڕۆژەیە هەوڵێکی تاکەکەسییە بۆ کۆکردنەوە و ئاسانکاری دەستڕاگەیشتن بە کتێبە کوردییەکان و سەرچاوە ئایینی و زانستییەکان.
+            </p>
+
+            <ul style="list-style: none; padding-right: 0; font-size: 16px; color: #555;">
+                <li style="margin-bottom: 10px;">✅ خوێندنەوەی ڕاستەوخۆی PDF</li>
+                <li style="margin-bottom: 10px;">✅ گوێگرتن لە تلاوەت و دەنگەکان</li>
+                <li style="margin-bottom: 10px;">✅ داونلۆدکردنی کتێبەکان بەخۆڕایی</li>
+            </ul>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+            
+            <p style="font-size: 14px; color: #777;">
+                دیزاین و گەشەپێدان: <strong>مەزهەر ڕەئوف</strong><br>
+                بەرواری دروستکردن: ٢٠٢٦/١/٦
+            </p>
+
+            <button onclick="location.reload()" style="margin-top: 25px; padding: 10px 25px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">گەڕانەوە بۆ سەرەتا</button>
         </div>
     `;
+    
+    // سکرۆڵ بکات بۆ لای نووسینەکە
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
