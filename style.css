@@ -1,113 +1,26 @@
-/* --- بنچینەی سایت --- */
-* { 
-    font-family: 'Noto Naskh Arabic', sans-serif; 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
-
-body { 
-    background-color: #f4f7f6; 
-    direction: rtl; 
-    color: #333;
-}
-
-/* --- هێدەر و ناڤبار --- */
-.main-header { 
-    background: #ffffff; 
-    border-bottom: 3px solid #3498db; 
-    padding: 15px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.top-nav { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    gap: 10px;
-}
-
+* { font-family: 'Noto Naskh Arabic', sans-serif; box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #f4f7f6; direction: rtl; color: #333; }
+.main-header { background: #fff; border-bottom: 3px solid #3498db; padding: 15px; }
+.top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
 .logo-area { font-size: 1.5rem; font-weight: bold; color: #2c3e50; }
 .nav-links { list-style: none; display: flex; gap: 20px; }
-.nav-links a { text-decoration: none; color: #34495e; font-weight: bold; font-size: 14px; cursor: pointer; }
+.nav-links a { text-decoration: none; color: #34495e; font-weight: bold; }
 
-/* --- دابەشکاری لاپەڕە --- */
-.content-wrapper { 
-    display: flex; 
-    flex-wrap: wrap; 
-    padding: 15px; 
-    gap: 15px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
+.content-wrapper { display: flex; padding: 20px; gap: 20px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+.sidebar-right, .audio-sidebar { width: 250px; }
+.main-content { flex: 1; min-width: 300px; background: #fff; border-radius: 12px; padding: 30px; border: 1px solid #ddd; min-height: 450px; text-align: center; }
 
-.sidebar-right, .audio-sidebar { 
-    width: 100%; 
-    max-width: 250px; 
-}
-
-.main-content { 
-    flex: 1; 
-    min-width: 300px; 
-    background: #ffffff; 
-    border-radius: 12px; 
-    padding: 20px; 
-    border: 1px solid #ddd; 
-    min-height: 450px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-}
-
-/* --- دوگمەکان و لیستەکان --- */
-.book-btn { 
-    width: 100%; 
-    padding: 12px; 
-    margin-bottom: 8px; 
-    background: #fff; 
-    border: 1px solid #3498db; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    text-align: right; 
-    transition: 0.3s;
-}
-
+.book-btn { width: 100%; padding: 12px; margin-bottom: 10px; background: #fff; border: 1px solid #3498db; border-radius: 8px; cursor: pointer; text-align: right; font-size: 14px; transition: 0.3s; }
 .book-btn:hover { background: #3498db; color: white; }
-
 .category-title { margin: 15px 0 10px; font-weight: bold; color: #7f8c8d; border-bottom: 1px solid #eee; padding-bottom: 5px; }
 
-/* --- پلەیەری دەنگی --- */
-.audio-player-box { 
-    background: #fff; 
-    padding: 15px; 
-    border-radius: 10px; 
-    border: 1px solid #3498db; 
-}
+.audio-player-box { background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #3498db; }
+.audio-list { list-style: none; padding: 0; margin-top: 10px; }
+.audio-list li { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; font-size: 14px; }
+.main-footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px; }
 
-.audio-list { list-style: none; margin-top: 10px; }
-.audio-list li { padding: 10px; border-bottom: 1px solid #f1f2f6; cursor: pointer; font-size: 14px; transition: 0.2s; }
-.audio-list li:hover { background: #f9f9f9; color: #3498db; }
-
-/* --- ستایلی تایبەت بە جاڤاسکریپت (PDF و زانیاری) --- */
-.pdf-viewer-container { display: flex; flex-direction: column; height: 85vh; width: 100%; animation: fadeIn 0.4s ease; border: 1px solid #3498db; border-radius: 8px; overflow: hidden; }
-.pdf-header { background: #3498db; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center; }
-.pdf-frame { width: 100%; height: 100%; border: none; }
-.info-box { animation: fadeIn 0.5s ease; padding: 25px; border: 1px solid #3498db; border-radius: 12px; text-align: center; background: #fff; }
-.back-btn { margin-top: 20px; padding: 10px 25px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.download-btn { background: #ffffff33; color: white; padding: 5px 12px; border-radius: 4px; text-decoration: none; font-size: 12px; border: 1px solid #fff; }
-.close-btn { background: #e74c3c; color: white; border: none; padding: 5px 15px; border-radius: 6px; cursor: pointer; font-size: 18px; line-height: 1; }
-
-/* --- کاتژمێر و فووتەر --- */
-#live-clock { font-size: 12px; color: #7f8c8d; margin-top: 5px; }
-.main-footer { text-align: center; padding: 20px; background: #2c3e50; color: white; font-size: 12px; margin-top: 30px; }
-
-/* ئەنیمەیشن */
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(10px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
-
-/* گونجاندن بۆ مۆبایل */
 @media (max-width: 768px) {
     .content-wrapper { flex-direction: column; }
-    .sidebar-right, .audio-sidebar { max-width: 100%; }
+    .sidebar-right, .audio-sidebar { width: 100%; }
     .main-content { order: -1; }
 }
