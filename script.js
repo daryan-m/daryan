@@ -12,23 +12,20 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// ٢. فەنکشنی سەرەکی بۆ کردنەوەی PDF
+// ٢. فەنکشنی کردنەوەی PDF
 function loadPDF(pdfUrl) {
     const mainArea = document.getElementById('main-area');
     if (!mainArea) return;
 
-    // ئامادەکردنی شوێنی پیشاندانەکە
     mainArea.style.padding = "0";
-    mainArea.style.maxWidth = "100%";
-
     const fullPdfUrl = window.location.origin + window.location.pathname + pdfUrl;
     const googleViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(fullPdfUrl)}&embedded=true`;
 
     mainArea.innerHTML = `
         <div class="pdf-viewer-container">
             <div class="pdf-header">
-                <div class="pdf-controls">
-                    <span class="pdf-title">📖 خوێندنەوە</span>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span style="font-weight: bold;">📖 خوێندنەوە</span>
                     <a href="${pdfUrl}" download class="download-btn">📥 داونلۆد</a>
                 </div>
                 <button onclick="location.reload()" class="close-btn">✕</button>
@@ -36,18 +33,17 @@ function loadPDF(pdfUrl) {
             <iframe src="${googleViewerUrl}" class="pdf-frame" allowfullscreen></iframe>
         </div>
     `;
-    
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// ٣. فەنکشن بۆ کردنەوەی لیستی جۆرەکانی کتێب
-function openBook(bookName) {
+// ٣. فەنکشن بۆ بەشە ئامادەنەکراوەکان
+function openCategory(catName) {
     const mainArea = document.getElementById('main-area');
     if (!mainArea) return;
 
     mainArea.innerHTML = `
         <div class="info-box">
-            <h2>بەشی ${bookName}</h2>
+            <h2 style="color:#3498db; margin-bottom:15px;">بەشی ${catName}</h2>
             <p>ئەم بەشە لە ئێستادا ئامادە دەکرێت... بەمزووانە کتێبەکانی لێرەدا بەردەست دەبن.</p>
             <button onclick="location.reload()" class="back-btn">گەڕانەوە</button>
         </div>
@@ -60,14 +56,10 @@ function setTrack(fileName, title) {
     const titleLabel = document.getElementById('track-display');
     
     if (audio && titleLabel) {
-        titleLabel.innerText = "ئێستا پەخش دەبێت: " + title;
+        titleLabel.innerText = "پەخش دەبێت: " + title;
         audio.src = fileName;
         audio.load();
-        audio.play().catch(e => console.log("بۆ کارکردنی دەنگ پێویستە جارێک کلیک لە سایتەکە بکەیت."));
-
-        audio.onended = function() {
-            titleLabel.innerText = "لیستی دەنگەکان";
-        };
+        audio.play().catch(e => console.log("Interaction needed"));
     }
 }
 
@@ -77,18 +69,13 @@ function showAbout() {
     if (!mainArea) return;
 
     mainArea.innerHTML = `
-        <div class="info-box about-box">
-            <h2>دەربارەی کتێبخانەی داریان</h2>
-            <p>بەخێربێیت بۆ کتێبخانەی داریان. ئەم پڕۆژەیە هەوڵێکی تاکەکەسییە بۆ ئاسانکاری دەستڕاگەیشتن بە کتێبە کوردییەکان.</p>
-            <ul class="features-list">
-                <li>✅ خوێندنەوەی ڕاستەوخۆی PDF</li>
-                <li>✅ گوێگرتن لە تلاوەت و دەنگەکان</li>
-                <li>✅ داونلۆدکردنی کتێبەکان</li>
-            </ul>
-            <p class="dedication">سەرچاوەى زانیارییەکانم لە خولیاى باوکێکەوە دێت بۆ زانست و زانیارى، بۆیە هەمیشە ئەنوسم بەیادى ئەو.</p>
-            <hr>
-            <p class="footer-info">دیزاین و گەشەپێدان: <strong>مەزهەر ڕەئوف</strong><br>٢٠٢٦/١/٦</p>
-            <button onclick="location.reload()" class="back-btn">گەڕانەوە بۆ سەرەتا</button>
+        <div class="info-box" style="text-align:right;">
+            <h2 style="color:#3498db; border-bottom:2px solid #3498db; display:inline-block; margin-bottom:15px;">دەربارەی کتێبخانەی داریان</h2>
+            <p style="margin-bottom:15px; line-height:1.8;">بەخێربێیت بۆ کتێبخانەی داریان. ئەم پڕۆژەیە هەوڵێکی تاکەکەسییە بۆ ئاسانکاری دەستڕاگەیشتن بە کتێبە کوردییەکان و سەرچاوە زانستییەکان.</p>
+            <p style="font-style:italic; color:#555;">"سەرچاوەى زانیارییەکانم لە خولیاى باوکێکەوە دێت بۆ زانست و زانیارى، بۆیە هەمیشە ئەنوسم بەیادى ئەو."</p>
+            <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
+            <p style="font-size:13px;">دیزاین و گەشەپێدان: <strong>مەزهەر ڕەئوف</strong><br>٢٠٢٦/١/٦</p>
+            <button onclick="location.reload()" class="back-btn">گەڕانەوە</button>
         </div>
     `;
     window.scrollTo({top: 0, behavior: 'smooth'});
