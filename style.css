@@ -134,7 +134,7 @@ body {
     text-align: right;
     border-bottom: 1px solid #eee;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 14px;
     color: #333;
 }
 .list-container-clean li:hover { background: #f0f7ff; color: #007bff; }
@@ -143,7 +143,7 @@ body {
 .main-content { 
     flex: 1; 
     background: white; 
-    border-radius: 10px; 
+    border-radius: 8px; 
     padding: 20px 0; 
     text-align: center; 
     border: 1px solid #eee; 
@@ -152,14 +152,14 @@ body {
 
 #pdf-viewer {
     width: 100%;
-    height: 75vh; /* بەرزییەکەی ڕێکدەخات بەپێی شاشەکە */
+    height: 80vh; /* بەرزییەکەی ڕێکدەخات بەپێی شاشەکە */
     border: 1px solid #3498db;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     background-color: #fff;
 }
 
-.welcome-section h1 { font-size: 20px; color: #2c3e50; margin-top: 25px; }
+.welcome-section h1 { font-size: 18px; color: #2c3e50; margin-top: 25px; }
 
 /* ٨. فوتەر */
 .main-footer {
@@ -248,6 +248,7 @@ body {
 .welcome-section {
     display: block;
 }
+
 
 
 
