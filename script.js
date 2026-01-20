@@ -21,11 +21,11 @@ function loadPDF(pdfUrl) {
             
             <div style="background: #3498db; color: white; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <span style="font-size: 12px;">📖 خوێندنەوەی کتێب</span>
-                    <button onclick="printPDF('${pdfUrl}')" style="background: #ffffff33; color: white; border: 1px solid white; padding: 1px 2px; cursor: pointer; border-radius: 2px; font-size: 11px;">🖨️ پرێنت</button>
-                    <a href="${pdfUrl}" download style="background: #ffffff33; color: white; border: 1px solid white; padding: 1px 2px; cursor: pointer; border-radius: 2px; font-size: 11px; text-decoration: none;">📥 داونلۆد</a>
+                    <span style="font-size: 13px;">📖 خوێندنەوەی کتێب</span>
+                    <button onclick="printPDF('${pdfUrl}')" style="background: #ffffff33; color: white; border: 1px solid white; padding: 1px 2px; cursor: pointer; border-radius: 2px; font-size: 12px;">🖨️ پرێنت</button>
+                    <a href="${pdfUrl}" download style="background: #ffffff33; color: white; border: 1px solid white; padding: 1px 2px; cursor: pointer; border-radius: 2px; font-size: 12px; text-decoration: none;">📥 داونلۆد</a>
                 </div>
-                <button onclick="location.reload()" style="background: #e74c3c; color: white; border: 1px solid white; padding: 1px 2px; cursor: pointer; border-radius: 2px; font-size: 11px;">✕ داخستن</button>
+                <button onclick="location.reload()" style="background: #e74c3c; color: white; border: 1px solid white; padding: 1px 2px; cursor: pointer; border-radius: 2px; font-size: 12px;">✕ داخستن</button>
             </div>
 
             <iframe id="pdf-frame" src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
@@ -137,4 +137,5 @@ function showAbout() {
     // سکرۆڵ بکات بۆ لای نووسینەکە
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
 
