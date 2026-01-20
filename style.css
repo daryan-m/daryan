@@ -15,9 +15,9 @@ body {
 
 /* ٢. هێدەر */
 .main-header {
-    margin: 10px 20px; 
-    border: 2px solid #3498db;
-    border-radius: 12px;
+    margin: 8px 16px; 
+    border: 1px solid #3498db;
+    border-radius: 8px;
     background-color: #f8f9fa;
 }
 
@@ -238,3 +238,4 @@ body {
 .welcome-section {
     display: block;
 }
+
