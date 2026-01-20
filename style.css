@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 25px;
 }
 
 .nav-links { display: flex; list-style: none; gap: 20px; }
@@ -239,6 +239,7 @@ body {
 .welcome-section {
     display: block;
 }
+
 
 
 
