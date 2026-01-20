@@ -22,7 +22,7 @@ body {
     /* هێڵی دووەم - سێبەرێکی خۆڵەمێشی کە وەک هێڵ دەردەکەوێت */
     box-shadow: 0 4px 0 0 #bdc3c7; 
     /* پاراستنی پادینگی خۆت و زیادکردنی بۆکس سایزینگ */
-    padding: 10px 0;
+    padding: 8px 0;
     box-sizing: border-box;
     /* دڵنیابوونەوە لەوەی هیچ شتێک لێی دەرناچێت */
     overflow: hidden;
@@ -144,7 +144,7 @@ body {
     flex: 1; 
     background: white; 
     border-radius: 10px; 
-    padding: 20px; 
+    padding: 20px 0; 
     text-align: center; 
     border: 1px solid #eee; 
     min-height: 400px; 
@@ -155,7 +155,7 @@ body {
     height: 75vh; /* بەرزییەکەی ڕێکدەخات بەپێی شاشەکە */
     border: 2px solid #3498db;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     background-color: #fff;
 }
 
@@ -248,6 +248,7 @@ body {
 .welcome-section {
     display: block;
 }
+
 
 
 
