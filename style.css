@@ -130,16 +130,22 @@ body {
 }
 
 .welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;       /* ئەمە وادەکات پڕ بە بۆکسەکە بێت */
     width: 100%;
-    text-align: center; /* نوسینەکە دەخاتە ناوەڕاست */
-    padding: 50px 20px; /* بۆشایی لە سەر و خوار دروست دەکات بۆ ئەوەی جوانتر بێت */
+    text-align: center;
+    padding: 60px 0;
+    min-height: 200px;
 }
 
 .welcome-section h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #2c3e50;
+    margin: 0;
+    width: 100%;
 }
+
 
 
 
@@ -214,6 +220,7 @@ body {
     .content-wrapper { flex-direction: column; padding: 0 10px; }
     .sidebar-right, .audio-sidebar, .main-content { width: 100%; }
 }
+
 
 
 
