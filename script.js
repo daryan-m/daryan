@@ -1,33 +1,29 @@
-// ١. فەنکشنی سەرەکی بۆ کردنەوەی PDF (ستایڵی Windows 11)
 function loadPDF(pdfUrl) {
     const mainArea = document.getElementById('main-area');
     if (!mainArea) return;
 
     mainArea.innerHTML = `
-        <div class="pdf-modal-container" style="animation: fadeIn 0.6s ease; display: flex; flex-direction: column; height: 90vh; background: white;">
+        <div class="pdf-modal-container" style="animation: fadeIn 0.6s ease; display: flex; flex-direction: column; height: 90vh; background: white; margin: 0; border: none;">
             
-            <div class="pdf-header-modern">
-                <div class="pdf-controls">
-                    <button onclick="printPDF('${pdfUrl}')" class="pdf-btn">🖨️ پرێنت</button>
-                    <a href="${pdfUrl}" download class="pdf-btn" style="text-decoration: none; color: inherit;">📥 داونلۆد</a>
-                </div>
-                <h3 style="font-size: 14px; font-weight: bold;">📖 خوێندنەوەی کتێب</h3>
-                <button onclick="location.reload()" class="pdf-btn close-btn">✕ داخستن</button>
+            <div class="pdf-header-modern" style="justify-content: center; position: relative;">
+                <a href="${pdfUrl}" download class="pdf-btn" style="position: absolute; right: 15px; text-decoration: none; color: inherit; font-size: 11px;">📥 داونلۆد</a>
+                
+                <h3 style="font-size: 14px; font-weight: bold; margin: 0;">📖 خوێندنەوەی کتێب</h3>
+                
+                <button onclick="location.reload()" class="pdf-btn close-btn" style="position: absolute; left: 15px;">✕</button>
             </div>
 
             <iframe id="pdf-viewer" src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0" 
-                    style="width: 100%; flex-grow: 1; border: none;"></iframe>
+                    style="width: 100%; flex-grow: 1; border: none; margin: 0;"></iframe>
         </div>
     `;
+    
+    // لادانی پادینگی بەشی ناوەڕاست کاتێک کتێبەکە دەکرێتەوە
+    mainArea.style.padding = "0";
     
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// ٢. فەنکشنی پرێنت
-function printPDF(pdfUrl) {
-    const printWindow = window.open(pdfUrl, '_blank');
-    if (printWindow) printWindow.print();
-}
 
 // ٣. کردنەوەی بەشە دەقییەکان
 function openBook(bookName) {
@@ -73,3 +69,4 @@ function showAbout() {
     `;
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
