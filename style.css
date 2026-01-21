@@ -85,6 +85,7 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
     gap: 10px; 
+    font-size: #0000;
 }
 
 /* ڕیزی یەکەم: ٢ دوگمە */
@@ -102,7 +103,7 @@ body {
     width: 100%;
     padding: 12px 5px;
     background: #fff;
-    border: 1px solid #3498db;
+    border: 1px solid #c0c0c0;
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
@@ -122,7 +123,7 @@ body {
     background: white; 
     border-radius: 12px; 
     padding: 0; /* لادانی بۆشایی دەوری کتێبەکە */
-    border: 1px solid #3498db; 
+    border: 1px solid #c0c0c0; 
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     overflow: hidden; /* بۆ ئەوەی گۆشەکان خڕ بمێننەوە */
 }
@@ -198,5 +199,6 @@ body {
     .content-wrapper { flex-direction: column; padding: 0 10px; }
     .sidebar-right, .audio-sidebar, .main-content { width: 100%; }
 }
+
 
 
