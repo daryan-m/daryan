@@ -129,6 +129,20 @@ body {
     overflow: hidden; /* بۆ ئەوەی گۆشەکان خڕ بمێننەوە */
 }
 
+.welcome-section {
+    width: 100%;
+    text-align: center; /* نوسینەکە دەخاتە ناوەڕاست */
+    padding: 50px 20px; /* بۆشایی لە سەر و خوار دروست دەکات بۆ ئەوەی جوانتر بێت */
+}
+
+.welcome-section h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+
+
 .pdf-modal-container {
     width: 100%;
     margin: 0;
@@ -200,6 +214,7 @@ body {
     .content-wrapper { flex-direction: column; padding: 0 10px; }
     .sidebar-right, .audio-sidebar, .main-content { width: 100%; }
 }
+
 
 
 
