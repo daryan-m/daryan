@@ -144,6 +144,8 @@ body {
 .welcome-section h1 {
     margin: 0;
     width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 
@@ -220,6 +222,7 @@ body {
     .content-wrapper { flex-direction: column; padding: 0 10px; }
     .sidebar-right, .audio-sidebar, .main-content { width: 100%; }
 }
+
 
 
 
