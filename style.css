@@ -19,7 +19,7 @@ body {
     background: #fff;
     border-bottom: 3px solid #3498db; 
     box-shadow: 0 4px 0 0 #bdc3c7; 
-    padding: 8px 0;
+    padding: 6px 0;
     margin-bottom: 5px;
 }
 
@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 20px;
+    padding: 6px 20px;
 }
 
 .nav-links { display: flex; list-style: none; gap: 15px; }
@@ -102,7 +102,7 @@ body {
     width: 100%;
     padding: 12px 5px;
     background: #fff;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #3498db;
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
@@ -122,7 +122,7 @@ body {
     background: white; 
     border-radius: 12px; 
     padding: 0; /* لادانی بۆشایی دەوری کتێبەکە */
-    border: 1px solid #e0e0e0; 
+    border: 1px solid #3498db; 
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     overflow: hidden; /* بۆ ئەوەی گۆشەکان خڕ بمێننەوە */
 }
@@ -138,7 +138,7 @@ body {
     padding: 10px 15px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid #3498db;
     position: relative; /* بۆ ناوەڕاستخستنی ناونیشانەکە */
 }
 
@@ -198,4 +198,5 @@ body {
     .content-wrapper { flex-direction: column; padding: 0 10px; }
     .sidebar-right, .audio-sidebar, .main-content { width: 100%; }
 }
+
 
