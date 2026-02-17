@@ -79,26 +79,46 @@ body {
 }
 
 /* ٥. ستایڵی دوگمەکانی کتێب */
-.sidebar-right { width: 300px; flex-shrink: 0; }
+.sidebar-right { 
+    width: 300px; 
+    flex-shrink: 0; 
+}
 
 .book-list { 
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
     gap: 10px; 
-    font-color: #008080;
 }
 
-/* ڕیزی یەکەم: ٢ دوگمە */
-.book-list .book-btn:nth-child(1),
-.book-list .book-btn:nth-child(2) {
-    grid-column: span 3;
+/* ستایڵی تایبەت بۆ دوگمەی دابەزاندنی ئەپ (لە سەرەوە و ناوەڕاست) */
+.download-link {
+    grid-column: 1 / -1; /* هەموو پاناییەکە دەگرێت */
+    text-decoration: none;
 }
 
-/* ڕیزەکانی تر: ٣ دوگمە */
-.book-list .book-btn:nth-child(n+3) {
-    grid-column: span 2;
+.download-btn {
+    width: 100%;
+    padding: 15px;
+    background: #2ea44f; /* ڕەنگی سەوزی گیتھەب */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
 }
 
+.download-btn:hover {
+    background: #24292e; /* دەبێتە ڕەنگی ڕەشی گیتھەب */
+    transform: translateY(-3px);
+}
+
+/* ڕێکخستنی دوگمە ئاساییەکان */
 .book-btn {
     width: 100%;
     padding: 12px 5px;
@@ -108,8 +128,19 @@ body {
     cursor: pointer;
     text-align: center;
     font-size: 14px;
-    transition: 4ll 0.3s ease;
-    font-color: #000000;
+    transition: all 0.3s ease;
+    color: #000000;
+}
+
+/* ڕیزی یەکەم دوای دوگمەی دابەزاندن: ئێستا دەبنە منداڵی ٢ و ٣ */
+.book-list .book-btn:nth-of-type(1),
+.book-list .book-btn:nth-of-type(2) {
+    grid-column: span 3;
+}
+
+/* ڕیزەکانی تر */
+.book-list .book-btn:nth-of-type(n+3) {
+    grid-column: span 2;
 }
 
 .book-btn:hover {
@@ -222,6 +253,7 @@ body {
     .content-wrapper { flex-direction: column; padding: 0 10px; }
     .sidebar-right, .audio-sidebar, .main-content { width: 100%; }
 }
+
 
 
 
